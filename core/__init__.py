@@ -141,6 +141,7 @@ class WarpCore(ABC):
         return self.Config(training=training)
 
     def setup_ddp(self, experiment_id, single_gpu=False):
+        print("Setting up DDP... {}".format("SINGLE GPU" if single_gpu else "MULTI GPU"))
         if not single_gpu:
             local_rank = int(os.environ.get("SLURM_LOCALID"))
             process_id = int(os.environ.get("SLURM_PROCID"))
