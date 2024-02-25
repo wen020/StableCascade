@@ -327,4 +327,4 @@ if __name__ == '__main__':
     warpcore.fsdp_defaults['sharding_strategy'] = ShardingStrategy.NO_SHARD
 
     # RUN TRAINING
-    warpcore()
+    warpcore(single_gpu=True)
