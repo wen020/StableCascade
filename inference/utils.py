@@ -4,8 +4,8 @@ import requests
 import torchvision
 from math import ceil
 from io import BytesIO
-import matplotlib.pyplot as plt
-from IPython.display import display, Image
+# import matplotlib.pyplot as plt
+# from IPython.display import display, Image
 import torchvision.transforms.functional as F
 
 
@@ -25,7 +25,7 @@ def downscale_images(images, factor=3/4):
     return scaled_image
 
 
-def show_images(images, rows=None, cols=None, return_images=False, **kwargs):
+def show_images(images, rows=None, cols=None, return_images=True, **kwargs):
     if images.size(1) == 1:
         images = images.repeat(1, 3, 1, 1)
     elif images.size(1) > 3:
@@ -45,10 +45,11 @@ def show_images(images, rows=None, cols=None, return_images=False, **kwargs):
     
     bio = BytesIO()
     grid.save(bio, format='png')
-    display(Image(bio.getvalue(), format='png'))
+    # display(Image(bio.getvalue(), format='png'))
 
     if return_images:
-        return grid
+        grid.save('./grid.png')
+        return './grid.png'
 
 
 def calculate_latent_sizes(height=1024, width=1024, batch_size=4, compression_factor_b=42.67, compression_factor_a=4.0):
