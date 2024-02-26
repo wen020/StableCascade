@@ -29,14 +29,14 @@ module_filters: ['.attn']
 rank: 4
 train_tokens:
   # - ['^snail', null] # token starts with "snail" -> "snail" & "snails", don't need to be reinitialized
-  - ['[fernando]', '^woman</w>'] # custom token [snail], initialize as avg of snail & snails
+  - ['[ohwx]', '^woman</w>'] # custom token [snail], initialize as avg of snail & snails
 
 
 # ema_start_iters: 5000
 # ema_iters: 100
 # ema_beta: 0.9
 
-webdataset_path: file:/home/wenjun/StableCascade/fernando_custom.tar
+webdataset_path: file:/home/wenjun/StableCascade/fernando_dog.tar
 effnet_checkpoint_path: models/effnet_encoder.safetensors
 previewer_checkpoint_path: models/previewer.safetensors
 generator_checkpoint_path: models/stage_c_lite_bf16.safetensors
