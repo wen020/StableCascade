@@ -54,7 +54,7 @@ models_b = WurstCoreB.Models(
 # cell 5
 batch_size = 4
 caption = "photo of a dog in a style [ohwx]"
-height, width = 1024, 1024
+height, width = 768, 768
 stage_c_latent_shape, stage_b_latent_shape = calculate_latent_sizes(height, width, batch_size=batch_size)
 
 # Stage C Parameters
