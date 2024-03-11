@@ -4,7 +4,6 @@ import yaml
 import torch
 from tqdm import tqdm
 
-os.chdir('..')
 from inference.utils import *
 from core.utils import load_or_fail
 from train import LoraCore, WurstCoreB
