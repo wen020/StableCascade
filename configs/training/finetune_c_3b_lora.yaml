@@ -29,7 +29,7 @@ module_filters: ['.attn']
 rank: 64
 train_tokens:
   # - ['^snail', null] # token starts with "snail" -> "snail" & "snails", don't need to be reinitialized
-  - ['[ohwx]', '^woman</w>'] # custom token [snail], initialize as avg of snail & snails
+  - ['[ohwx]', '^style</w>'] # custom token [snail], initialize as avg of snail & snails
 
 
 # ema_start_iters: 5000
