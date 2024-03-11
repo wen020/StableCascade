@@ -14,14 +14,14 @@ print(device)
 
 # cell 2
 # SETUP STAGE C
-config_file = '/home/wenjun/StableCascade/configs/inference/lora_c_3b.yaml'
+config_file = './configs/inference/lora_c_3b.yaml'
 with open(config_file, "r", encoding="utf-8") as file:
     loaded_config = yaml.safe_load(file)
 
 core = LoraCore(config_dict=loaded_config, device=device, training=False)
 
 # SETUP STAGE B
-config_file_b = '/home/wenjun/StableCascade/configs/inference/stage_b_3b.yaml'
+config_file_b = './configs/inference/stage_b_3b.yaml'
 with open(config_file_b, "r", encoding="utf-8") as file:
     config_file_b = yaml.safe_load(file)
 
@@ -53,7 +53,7 @@ models_b = WurstCoreB.Models(
 
 # cell 5
 batch_size = 4
-caption = "photo of a dog in a style [ohwx]"
+caption = "photo of a dog in a woman [ohwx]"
 height, width = 768, 768
 stage_c_latent_shape, stage_b_latent_shape = calculate_latent_sizes(height, width, batch_size=batch_size)
 

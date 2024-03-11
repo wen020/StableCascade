@@ -1,15 +1,15 @@
 # GLOBAL STUFF
-model_version: 1B
+model_version: 3.6B
 dtype: bfloat16
 
 # LoRA specific
 module_filters: ['.attn']
-rank: 64
+rank: 16
 train_tokens:
   # - ['^snail', null] # token starts with "snail" -> "snail" & "snails", don't need to be reinitialized
-  - ['[ohwx]', '^style</w>'] # custom token [snail], initialize as avg of snail & snails
+  - ['[ohwx]', '^woman</w>'] # custom token [snail], initialize as avg of snail & snails
 
-effnet_checkpoint_path: /home/wenjun/StableCascade/models/effnet_encoder.safetensors
-previewer_checkpoint_path: /home/wenjun/StableCascade/models/previewer.safetensors
-generator_checkpoint_path: /home/wenjun/StableCascade/models/stage_c_lite_bf16.safetensors
-lora_checkpoint_path: /home/wenjun/StableCascade/checkpoint/stage_c_3b_lora/lora.safetensors
+effnet_checkpoint_path: ./models/effnet_encoder.safetensors
+previewer_checkpoint_path: ./models/previewer.safetensors
+generator_checkpoint_path: ./models/stage_c_bf16.safetensors
+lora_checkpoint_path: ./checkpoint/stage_c_3b_lora/lora.safetensors
