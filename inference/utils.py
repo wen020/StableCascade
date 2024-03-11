@@ -48,8 +48,8 @@ def show_images(images, rows=None, cols=None, return_images=True, **kwargs):
     # display(Image(bio.getvalue(), format='png'))
 
     if return_images:
-        grid.save('/home/wenjun/StableCascade/grid_style_max.png')
-        return '/home/wenjun/StableCascade/grid_style_max.png'
+        grid.save('./grid_style_max.png')
+        return './grid_style_max.png'
 
 
 def calculate_latent_sizes(height=1024, width=1024, batch_size=4, compression_factor_b=42.67, compression_factor_a=4.0):
